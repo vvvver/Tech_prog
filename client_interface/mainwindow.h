@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "dialog_reg.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,10 +19,12 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_authButton_clicked();
+
+    void on_regButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-
+    Dialog_reg *window;
 };
 #endif // MAINWINDOW_H

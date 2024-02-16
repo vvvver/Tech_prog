@@ -1,7 +1,9 @@
 #include "mainwindow.h"
+#include "dialog_reg.h"
 #include "ui_mainwindow.h"
 #include "test_win.h"
 #include <QMessageBox>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -16,6 +18,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lineEdit_2->setClearButtonEnabled(true);
 
     ui->lineEdit_2->setEchoMode(QLineEdit::Password);
+
+    window = new Dialog_reg();
+    connect(window, &Dialog_reg::openMain, this, &MainWindow::show);
 }
 
 MainWindow::~MainWindow()
@@ -23,10 +28,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-
-
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_authButton_clicked()
 {
     QString login = ui->lineEdit->text();
     QString password = ui->lineEdit_2->text();
@@ -40,3 +42,12 @@ void MainWindow::on_pushButton_clicked()
     }
 }
 
+
+
+void MainWindow::on_regButton_clicked()
+{
+    ui->lineEdit->clear();
+    ui->lineEdit_2->clear();
+    window->show();
+    this->close();
+}
