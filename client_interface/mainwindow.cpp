@@ -33,7 +33,7 @@ void MainWindow::on_authButton_clicked()
     QString login = ui->lineEdit->text();
     QString password = ui->lineEdit_2->text();
     //MyClientSingleton::my_send_message(login +"&"+my_hash(password))
-    if(login == "IvanII" && password == "qwerty123"){
+    if(login == "Vasya" && password == "qwerty123"){
         hide();
         test_win window;
         window.setModal(true);
