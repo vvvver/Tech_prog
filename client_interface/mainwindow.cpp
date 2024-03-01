@@ -2,8 +2,9 @@
 #include "dialog_reg.h"
 #include "ui_mainwindow.h"
 #include "test_win.h"
+#include "func_for_client.h"
 #include <QMessageBox>
-
+//#include <QDebug>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)

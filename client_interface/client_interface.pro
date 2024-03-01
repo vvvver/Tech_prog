@@ -1,4 +1,5 @@
-QT       += core gui
+QT       += core gui \
+    quick
 QT -= gui
 
 
@@ -13,12 +14,14 @@ DEFINES += QT_DEPRECATED_WARNINGS    # disables all the APIs deprecated before Q
 
 SOURCES += \
     dialog_reg.cpp \
+    func_for_client.cpp \
     main.cpp \
     mainwindow.cpp \
     test_win.cpp
 
 HEADERS += \
     dialog_reg.h \
+    func_for_client.h \
     mainwindow.h \
     test_win.h
 

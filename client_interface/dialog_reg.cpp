@@ -29,6 +29,9 @@ Dialog_reg::~Dialog_reg()
 void Dialog_reg::on_createBut_clicked()
 {
     hide();
+    ui->username->clear();
+    ui->password->clear();
+    ui->email_reg->clear();
     emit openMain();
 }
 
