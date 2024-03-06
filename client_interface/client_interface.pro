@@ -17,12 +17,14 @@ SOURCES += \
     func_for_client.cpp \
     main.cpp \
     mainwindow.cpp \
+    singletonclient.cpp \
     test_win.cpp
 
 HEADERS += \
     dialog_reg.h \
     func_for_client.h \
     mainwindow.h \
+    singletonclient.h \
     test_win.h
 
 FORMS += \

@@ -1,10 +1,12 @@
-#include "mainwindow.h"
 #include "dialog_reg.h"
 #include "ui_mainwindow.h"
 #include "test_win.h"
+#include "singletonclient.h"
 #include "func_for_client.h"
 #include <QMessageBox>
-//#include <QDebug>
+#include "mainwindow.h"
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -33,8 +35,10 @@ void MainWindow::on_authButton_clicked()
 {
     QString login = ui->lineEdit->text();
     QString password = ui->lineEdit_2->text();
-    //MyClientSingleton::my_send_message(login +"&"+my_hash(password))
-    if(login == "Vasya" && password == "qwerty123"){
+    MyHash(password);
+    SingletonClient::getInstance()->seng_msg_to_server(login + "&" + password);
+
+    if(login == "Vasya" && password == "qwer123"){
         hide();
         test_win window;
         window.setModal(true);

@@ -13,5 +13,4 @@ void MyHash(QString str)
     byteArray.append(char_array);
     QByteArray hash = QCryptographicHash::hash(byteArray, QCryptographicHash::Sha3_512);
     str = hash.toBase64();
-    qDebug() << str;
 }
