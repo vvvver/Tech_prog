@@ -17,20 +17,20 @@ SOURCES += \
     func_for_client.cpp \
     main.cpp \
     mainwindow.cpp \
-    singletonclient.cpp \
-    test_win.cpp
+    navigation_page.cpp \
+    singletonclient.cpp
 
 HEADERS += \
     dialog_reg.h \
     func_for_client.h \
     mainwindow.h \
-    singletonclient.h \
-    test_win.h
+    navigation_page.h \
+    singletonclient.h
 
 FORMS += \
     dialog_reg.ui \
     mainwindow.ui \
-    test_win.ui
+    navigation_page.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

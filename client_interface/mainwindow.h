@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "dialog_reg.h"
+#include "navigation_page.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -26,5 +27,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Dialog_reg *window;
+    Navigation_page *nav_win;
+signals:
+    void open_nav();
 };
 #endif // MAINWINDOW_H

@@ -45,3 +45,4 @@ void Dialog_reg::on_pushButton_2_clicked()
     emit openMain();
 }
 
+

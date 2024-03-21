@@ -1,11 +1,9 @@
-#include "dialog_reg.h"
 #include "ui_mainwindow.h"
-#include "test_win.h"
 #include "singletonclient.h"
 #include "func_for_client.h"
-#include <QMessageBox>
+//#include "navigation_page.h"
 #include "mainwindow.h"
-
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -24,6 +22,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     window = new Dialog_reg();
     connect(window, &Dialog_reg::openMain, this, &MainWindow::show);
+
+    nav_win = new Navigation_page();
+    //nav_win->show();
+
+    connect(this, &MainWindow::open_nav, nav_win, &Navigation_page::show);
 }
 
 MainWindow::~MainWindow()
@@ -38,12 +41,11 @@ void MainWindow::on_authButton_clicked()
     MyHash(password);
     SingletonClient::getInstance()->seng_msg_to_server(login + "&" + password);
 
-    if(login == "Vasya" && password == "qwer123"){
-        hide();
-        test_win window;
-        window.setModal(true);
-        window.exec();
-    } else {
+    if(/*login == "Vasya" && password == "qwer123"*/ true){
+        this->close();
+        emit open_nav();
+    }
+    else {
         ui->lineEdit->clear();
         ui->lineEdit_2->clear();
         QMessageBox::warning(this, "Авторизация", "Вы не смогли авторизоваться");
