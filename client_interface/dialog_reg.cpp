@@ -1,5 +1,6 @@
 #include "dialog_reg.h"
 #include "ui_dialog_reg.h"
+#include "singletonclient.h"
 //#include "mainwindow.h"
 #include <QMessageBox>
 
@@ -28,6 +29,12 @@ Dialog_reg::~Dialog_reg()
 
 void Dialog_reg::on_createBut_clicked()
 {
+    QString username = ui ->username->text();
+    QString pass = ui->password->text();
+    QString mail = ui->email_reg->text();
+    SingletonClient::getInstance()->seng_msg_to_server("reg&");
+    SingletonClient::getInstance()->seng_msg_to_server(username + "&"
+                                                       + pass + "&" + mail);
     hide();
     ui->username->clear();
     ui->password->clear();
