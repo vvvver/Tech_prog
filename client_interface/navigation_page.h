@@ -30,6 +30,10 @@ private slots:
 
     void on_exit_Button_clicked();
 
+    void on_submit_task1_button_clicked();
+
+    void on_submit_task2_Button_clicked();
+
 private:
     Ui::Navigation_page *ui;
 

@@ -1,6 +1,6 @@
 
 #include "ui_mainwindow.h"
-#include "singletonclient.h"
+//#include "singletonclient.h"
 #include "func_for_client.h"
 //#include "navigation_page.h"
 #include "mainwindow.h"
@@ -39,11 +39,8 @@ void MainWindow::on_authButton_clicked()
 {
     QString login = ui->lineEdit->text();
     QString password = ui->lineEdit_2->text();
-    MyHash(password);
-    SingletonClient::getInstance()->seng_msg_to_server("auth&");
-    SingletonClient::getInstance()->seng_msg_to_server(login + "&" + password);
 
-    if(/*login == "Vasya" && password == "qwer123"*/ true){
+    if(auth(login,password)){
         this->close();
         emit open_nav();
     }

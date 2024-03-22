@@ -17,18 +17,19 @@ SingletonClient* SingletonClient::getInstance() {
     return p_instance;
 }
 
-void SingletonClient::seng_msg_to_server(QString query) {
+QString SingletonClient::seng_msg_to_server(QString query) {
     mTcpSocket->write(query.toUtf8());
-}
-
-void SingletonClient::slotServerRead(){
+//}
+    mTcpSocket->waitForReadyRead();
+//void SingletonClient::slotServerRead(){
     QString msg = "";
     while (mTcpSocket->bytesAvailable()>0) {
         QByteArray array = mTcpSocket->readAll();
         msg.append(array);
     }
     qDebug() << msg;
-    emit message_from_server(msg);
+    //emit message_from_server(msg);
+    return msg;
 }
 
 SingletonClient::~SingletonClient()

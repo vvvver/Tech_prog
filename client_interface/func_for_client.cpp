@@ -1,8 +1,5 @@
 #include "func_for_client.h"
-#include <QCryptographicHash>
-#include <QByteArray>
-#include <QString>
-#include <QDebug>
+#include "singletonclient.h"
 #include <string>
 
 void MyHash(QString str)
@@ -14,3 +11,39 @@ void MyHash(QString str)
     QByteArray hash = QCryptographicHash::hash(byteArray, QCryptographicHash::Sha3_512);
     str = hash.toBase64();
 }
+
+bool auth(QString login,QString password)
+{
+    MyHash(password);
+    QString res =SingletonClient::getInstance()->seng_msg_to_server("auth&"+login + "&" + password);
+
+    return "auth-"!=res;
+}
+
+bool reg(QString login, QString password, QString mail){
+    MyHash(password);
+
+    QString result_reg = SingletonClient::getInstance()
+                             ->seng_msg_to_server("reg&"+login + "&" + password +"&" + mail);
+    return "reg-"!= result_reg;
+}
+
+bool Submit_task1(QString taskNum, QString variant, QString answer){
+    QString result_task = SingletonClient::getInstance()
+                             ->seng_msg_to_server("check&"+taskNum + "&" + variant +"&" + answer);
+    return "check-" != result_task;
+}
+
+/*bool Statistics(QString login){
+    QString correct_answer = "stat&3&6&-7";
+    QString result_stat = SingletonClient::getInstance()
+                              ->seng_msg_to_server("stat&"+login);
+    return correct_answer == result_stat;
+}*/
+
+
+
+
+
+
+

@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QWidget" name="gridLayoutWidget">
@@ -122,11 +122,14 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="1" column="0">
+       <widget class="QLineEdit" name="answer_2"/>
+      </item>
+      <item row="3" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_10">
         <item>
-         <widget class="QPushButton" name="answerButt">
+         <widget class="QPushButton" name="submit_task1_Button">
           <property name="text">
-           <string>Answer</string>
+           <string>Submit</string>
           </property>
          </widget>
         </item>
@@ -140,21 +143,17 @@
        </layout>
       </item>
       <item row="0" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_9">
-        <item>
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Task 2</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="margin">
-           <number>0</number>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Task 2</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -170,12 +169,12 @@
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="1" column="0">
+      <item row="2" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QPushButton" name="answer_Button">
+         <widget class="QPushButton" name="submit_task1_button">
           <property name="text">
-           <string>Answer</string>
+           <string>Submit</string>
           </property>
          </widget>
         </item>
@@ -188,22 +187,21 @@
         </item>
        </layout>
       </item>
+      <item row="1" column="0">
+       <widget class="QLineEdit" name="answer_task1"/>
+      </item>
       <item row="0" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Task 1</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="margin">
-           <number>0</number>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Task 1</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
