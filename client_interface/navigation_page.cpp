@@ -2,6 +2,7 @@
 #include "ui_navigation_page.h"
 #include "func_for_client.h"
 #include <QMessageBox>
+#include <QDebug>
 
 Navigation_page::Navigation_page(QWidget *parent)
     : QWidget(parent)
@@ -24,6 +25,7 @@ void Navigation_page::on_task1_Button_clicked()
 
 void Navigation_page::on_exit1_Button_clicked()
 {
+    ui->answer_task1->clear();
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -35,6 +37,7 @@ void Navigation_page::on_task2_Button_clicked()
 
 void Navigation_page::on_exit_home_clicked()
 {
+    ui->answer_2->clear();
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -47,7 +50,7 @@ void Navigation_page::on_exitButton_clicked()
 
 void Navigation_page::on_stat_Button_clicked()
 {
-    QString login = "Vasya";
+    qDebug()<<userLog;
     //if(Statistics(login)){
         ui->stackedWidget->setCurrentIndex(1);
     //}
@@ -84,7 +87,7 @@ void Navigation_page::on_submit_task2_Button_clicked()
         ui->stackedWidget->setCurrentIndex(0);
     }
     else {
-        ui->answer_task1->clear();
+        ui->answer_2->clear();
         QMessageBox::warning(this, "Ошибка", "Неправильный ответ");
     }
 }

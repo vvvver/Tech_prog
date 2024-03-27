@@ -15,6 +15,7 @@ public:
     explicit Navigation_page(QWidget *parent = nullptr);
     ~Navigation_page();
 
+    QString userLog;
 private slots:
     void on_task1_Button_clicked();
 

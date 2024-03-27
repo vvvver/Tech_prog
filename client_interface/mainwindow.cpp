@@ -1,8 +1,6 @@
 
 #include "ui_mainwindow.h"
-//#include "singletonclient.h"
 #include "func_for_client.h"
-//#include "navigation_page.h"
 #include "mainwindow.h"
 #include <QMessageBox>
 
@@ -25,7 +23,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(window, &Dialog_reg::openMain, this, &MainWindow::show);
 
     nav_win = new Navigation_page();
-    //nav_win->show();
 
     connect(this, &MainWindow::open_nav, nav_win, &Navigation_page::show);
 }
@@ -35,14 +32,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
 void MainWindow::on_authButton_clicked()
 {
     QString login = ui->lineEdit->text();
     QString password = ui->lineEdit_2->text();
-
     if(auth(login,password)){
+        nav_win->userLog = login;
         this->close();
         emit open_nav();
+
     }
     else {
         ui->lineEdit->clear();
