@@ -51,9 +51,9 @@ void Navigation_page::on_exitButton_clicked()
 void Navigation_page::on_stat_Button_clicked()
 {
     qDebug()<<userLog;
-    //if(Statistics(login)){
+    if(Statistics(userLog)){
         ui->stackedWidget->setCurrentIndex(1);
-    //}
+    }
 }
 
 

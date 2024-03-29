@@ -18,18 +18,7 @@ bool reg(QString, QString, QString);
 
 bool Submit_task1(QString, QString, QString);
 
-bool Statistics();
+bool Statistics(QString);
 
-
-/*class LoginInfo {
-public:
-    LoginInfo* ex;
-    void  setLog(QString);
-    QString getLog();
-private:
-    QString UserLog;
-};*/
-
-//LoginInfo* ex;
 
 #endif // FUNC_FOR_CLIENT_H
