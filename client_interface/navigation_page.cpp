@@ -50,8 +50,12 @@ void Navigation_page::on_exitButton_clicked()
 
 void Navigation_page::on_stat_Button_clicked()
 {
-    qDebug()<<userLog;
-    if(Statistics(userLog)){
+    int num1, num2;
+    if(Statistics(userLog, num1, num2)){
+        QString myStr = "Общая кол-во решенных задач: " + QString::number(num1 + num2) +
+                        "\n=========================\nКол-во правильных ответов: " + QString::number(num1) +
+                        "\n=========================\nКол-во неправильных ответов: " + QString::number(num2);
+        ui->label_2->setText(myStr);
         ui->stackedWidget->setCurrentIndex(1);
     }
 }
@@ -91,6 +95,4 @@ void Navigation_page::on_submit_task2_Button_clicked()
         QMessageBox::warning(this, "Ошибка", "Неправильный ответ");
     }
 }
-
-
 

@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QWidget" name="gridLayoutWidget">
@@ -127,7 +127,7 @@
       <item row="3" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_10">
         <item>
-         <widget class="QPushButton" name="submit_task1_Button">
+         <widget class="QPushButton" name="submit_task2_Button">
           <property name="text">
            <string>Submit</string>
           </property>

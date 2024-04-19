@@ -1,4 +1,3 @@
-
 #include "ui_mainwindow.h"
 #include "func_for_client.h"
 #include "mainwindow.h"
@@ -41,7 +40,6 @@ void MainWindow::on_authButton_clicked()
         nav_win->userLog = login;
         this->close();
         emit open_nav();
-
     }
     else {
         ui->lineEdit->clear();
