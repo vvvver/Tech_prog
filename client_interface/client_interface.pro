@@ -13,6 +13,7 @@ CONFIG -= app_bundle
 DEFINES += QT_DEPRECATED_WARNINGS    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    SHA512.cpp \
     dialog_reg.cpp \
     func_for_client.cpp \
     main.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
     singletonclient.cpp
 
 HEADERS += \
+    SHA512.h \
     dialog_reg.h \
     func_for_client.h \
     mainwindow.h \

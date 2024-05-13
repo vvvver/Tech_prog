@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>417</width>
+    <height>304</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,14 +16,14 @@
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>60</y>
-     <width>271</width>
-     <height>201</height>
+     <x>70</x>
+     <y>20</y>
+     <width>311</width>
+     <height>271</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QWidget" name="gridLayoutWidget">
@@ -41,14 +41,14 @@
         <item>
          <widget class="QPushButton" name="task1_Button">
           <property name="text">
-           <string>Task 1</string>
+           <string>Кратчайший путь</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="task2_Button">
           <property name="text">
-           <string>Task 2</string>
+           <string>Деление пополам</string>
           </property>
          </widget>
         </item>
@@ -164,36 +164,15 @@
       <rect>
        <x>20</x>
        <y>10</y>
-       <width>241</width>
-       <height>191</height>
+       <width>211</width>
+       <height>181</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="2" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QPushButton" name="submit_task1_button">
-          <property name="text">
-           <string>Submit</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="exit1_Button">
-          <property name="text">
-           <string>Exit</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLineEdit" name="answer_task1"/>
-      </item>
-      <item row="0" column="0">
+      <item row="1" column="1">
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>Task 1</string>
+         <string/>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -204,6 +183,42 @@
        </widget>
       </item>
      </layout>
+    </widget>
+    <widget class="QPushButton" name="submit_task1_button">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>10</y>
+       <width>61</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Submit</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="exit1_Button">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>30</y>
+       <width>61</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Exit</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="answer_task1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>200</y>
+       <width>211</width>
+       <height>51</height>
+      </rect>
+     </property>
     </widget>
    </widget>
   </widget>

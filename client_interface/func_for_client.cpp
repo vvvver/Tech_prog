@@ -1,29 +1,30 @@
 #include "func_for_client.h"
 #include "singletonclient.h"
+#include "SHA512.h"
 //#include <iostream>
 //#include <sstream>
 
-QString MyHash(QString str)
-{
-    QByteArray byteArray = str.toUtf8();
-    QByteArray hash = QCryptographicHash::hash(byteArray, QCryptographicHash::Sha3_512);
-    return str = hash.toBase64();
-}
 
 bool auth(QString login, QString password)
 {
-    password = MyHash(password);
+    //password = MyHash(password);
+    SHA512 sha512;
+    std::string pass = password.toStdString();
+    QString pass_hash = QString::fromStdString(sha512.hash(pass));
+
     QString res =SingletonClient::getInstance()
-                      ->seng_msg_to_server("auth&"+login + "&" + password);
+                      ->seng_msg_to_server("auth&"+login + "&" + pass_hash);
     return "auth-"!=res;
 }
 
 bool reg(QString login, QString password, QString mail)
 {
-    password = MyHash(password);
+    SHA512 sha512;
+    std::string pass = password.toStdString();
+    QString pass_hash = QString::fromStdString(sha512.hash(pass));
 
     QString result_reg = SingletonClient::getInstance()
-                             ->seng_msg_to_server("reg&"+login + "&" + password +"&" + mail);
+                             ->seng_msg_to_server("reg&"+login + "&" + pass_hash +"&" + mail);
     return "reg-"!= result_reg;
 }
 
@@ -67,6 +68,24 @@ bool init_Int_Var(QString input, int& num1, int& num2) {
     }
 
     return true;
+}
+
+QString Random_Graph(int num){
+    QFile file("C:/Users/abdua/Desktop/client_interface/graph_query.txt");
+    if(!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        qDebug()<< "Не удалось открыть файл";
+    }
+    QTextStream in(&file);
+
+    for(int i = 1; i < num; i++){
+        in.readLine();
+    }
+
+    QString line = in.readLine();
+    qDebug()<< line;
+    file.close();
+
+    return line;
 }
 
 

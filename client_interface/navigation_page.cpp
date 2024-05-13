@@ -1,8 +1,14 @@
 #include "navigation_page.h"
 #include "ui_navigation_page.h"
 #include "func_for_client.h"
+#include "singletonclient.h"
+#include <QRandomGenerator>
+#include <QDir>
 #include <QMessageBox>
+#include <QLabel>
 #include <QDebug>
+
+//#include "singletonclient.h"
 
 Navigation_page::Navigation_page(QWidget *parent)
     : QWidget(parent)
@@ -21,8 +27,23 @@ Navigation_page::~Navigation_page()
 void Navigation_page::on_task1_Button_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
-}
 
+
+    int randomInt = QRandomGenerator::global()->bounded(1, 3);
+    QString query = Random_Graph(randomInt);
+    QString str = "C:/Users/abdua/Desktop/client_interface/png/"+
+                  QString::number(randomInt) + ".png";
+    QDir dir(str);
+    QPixmap pix(str);
+
+    QString res =SingletonClient::getInstance()->seng_msg_to_server(query);
+    //if(res == "task+"){
+    int w = ui->label->width();
+    int h = ui->label->height();
+    ui->label->setPixmap(pix.scaled(w, h, Qt::KeepAspectRatio));
+    ui->label->show();
+    //}
+}
 void Navigation_page::on_exit1_Button_clicked()
 {
     ui->answer_task1->clear();
@@ -69,10 +90,10 @@ void Navigation_page::on_exit_Button_clicked()
 
 void Navigation_page::on_submit_task1_button_clicked()
 {
-    QString variant = "12";
+
     QString answer = ui->answer_task1->text();
 
-    if(Submit_task1("task_1", variant, answer)){
+    if(Submit_task1(answer)){
         ui->stackedWidget->setCurrentIndex(0);
     }
     else {
