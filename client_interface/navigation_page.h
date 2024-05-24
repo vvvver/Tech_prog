@@ -16,6 +16,7 @@ public:
     ~Navigation_page();
 
     QString userLog;
+    QString graph;
 private slots:
     void on_task1_Button_clicked();
 

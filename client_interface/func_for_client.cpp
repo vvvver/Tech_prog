@@ -28,10 +28,10 @@ bool reg(QString login, QString password, QString mail)
     return "reg-"!= result_reg;
 }
 
-bool Submit_task1(QString taskNum, QString variant, QString answer)
+bool Submit_task1(QString answer)
 {
     QString result_task = SingletonClient::getInstance()
-                             ->seng_msg_to_server("check&"+taskNum + "&" + variant +"&" + answer);
+                             ->seng_msg_to_server(answer);
     return "check-" != result_task;
 }
 
