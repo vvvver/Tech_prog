@@ -32,7 +32,7 @@ bool Submit_task1(QString answer)
 {
     QString result_task = SingletonClient::getInstance()
                              ->seng_msg_to_server(answer);
-    return "check-" != result_task;
+    return "neverno-" != result_task;
 }
 
 bool Statistics(QString any, int& num1, int& num2)
