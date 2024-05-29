@@ -38,10 +38,13 @@ private:
                           0x113f9804bef90daeULL, 0x1b710b35131c471bULL, 0x28db77f523047d84ULL, 0x32caab7b40c72493ULL, 0x3c9ebe0a15c9bebcULL,
                           0x431d67c49c100d4cULL, 0x4cc5d4becb3e42b6ULL, 0x597f299cfc657e2aULL, 0x5fcb6fab3ad6faecULL, 0x6c44198c4a475817ULL};
 
-    uint64** preprocess(const unsigned char* input, size_t& nBuffer);
+    uint64** preprocess(const unsigned char* input, size_t& nBuffer); 
+    // \brief добавление строки
     void appendLen(size_t l, uint64& lo, uint64& hi);
+    // \brief процесс хэширования  
     void process(uint64** buffer, size_t nBuffer, uint64* h);
     std::string digest(uint64* h);
+    // \brief свободный буффер
     void freeBuffer(uint64** buffer, size_t nBuffer);
 
     // Operations
@@ -64,6 +67,7 @@ private:
     size_t const WORD_LEN = 8;
 
 public:
+    // \brief функция хэширования
     std::string hash(const std::string input);
 
     SHA512();
