@@ -16,6 +16,7 @@ private:
     SingletonClient* p_instance;
 public:
     ~SingletonDestroyer() { delete p_instance;}
+    // \brief инициализация клиента
     void initialize(SingletonClient* p){p_instance = p;};
 };
 
@@ -37,6 +38,7 @@ protected:
 public:
     static SingletonClient* getInstance();
 
+    // \brief отправка сообщения на сервер
     QString seng_msg_to_server(QString query);
 //signals:
 //    void message_from_server(QString msg);
