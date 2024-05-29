@@ -24,8 +24,10 @@ public:
 
 
 private slots:
+    // \brief слот реагирующий на кнопку авторизации
     void on_authButton_clicked();
 
+    // \brief слот реагирующий на кнопку регистрации
     void on_regButton_clicked();
 
 private:
