@@ -14,6 +14,7 @@ DEFINES += QT_DEPRECATED_WARNINGS    # disables all the APIs deprecated before Q
 
 SOURCES += \
     SHA512.cpp \
+    aes.cpp \
     dialog_reg.cpp \
     func_for_client.cpp \
     main.cpp \
@@ -23,6 +24,7 @@ SOURCES += \
 
 HEADERS += \
     SHA512.h \
+    aes.h \
     dialog_reg.h \
     func_for_client.h \
     mainwindow.h \

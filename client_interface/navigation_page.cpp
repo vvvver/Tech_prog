@@ -1,14 +1,12 @@
 #include "navigation_page.h"
 #include "ui_navigation_page.h"
 #include "func_for_client.h"
-//#include "singletonclient.h"
+#include "aes.h"
 #include <QRandomGenerator>
 #include <QDir>
 #include <QMessageBox>
 #include <QLabel>
-#include <QDebug>
-
-//#include "singletonclient.h"
+//#include <QDebug>
 
 Navigation_page::Navigation_page(QWidget *parent)
     : QWidget(parent)
@@ -92,8 +90,9 @@ void Navigation_page::on_submit_task1_button_clicked()
 {
 
     QString answer = ui->answer_task1->text();
+    //qDebug()<< decryptMessage(graph);
 
-    if(Submit_task1("graph&" + answer + "&" + graph + "&")){
+    if(Submit_task1("graph&" + answer + "&" + decryptMessage(graph))){
         ui->stackedWidget->setCurrentIndex(0);
     }
     else {
