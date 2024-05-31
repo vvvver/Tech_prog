@@ -16,11 +16,14 @@ public:
     ~Dialog_reg();
 
 signals:
+    // \brief открытие главного окна
     void openMain();
 
 private slots:
+    // \brief слот создающий кнопку 1
     void on_createBut_clicked();
 
+    // \brief слот реагирующий на нажатие кнопки 2
     void on_pushButton_2_clicked();
 
 private:
